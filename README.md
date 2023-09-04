@@ -20,7 +20,7 @@ Before you begin, make sure you have the following installed on your system:
 3. Run the following command to install `pip`:
 
    ```
-   python get-pip.py
+   python3 get-pip.py
    ```
 
 ### Linux
