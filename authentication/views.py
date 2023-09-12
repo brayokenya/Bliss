@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from slack_integration.slack_service import send_message
 
 
 def home(request):
@@ -28,3 +30,8 @@ def register(request):
 @login_required()
 def profile(request):
     return render(request, "profile.html")
+
+
+def slack_integration(request):
+    response = send_message('#general', 'Hello from Bliss!')
+    return HttpResponse('Message sent successfully!')
